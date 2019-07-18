@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CYDOT E-Document | ติดต่อองค์กร</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/cydotlogo.png">
+    <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index_user.html">CYDOT E-Document</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index_user.html">หน้าหลัก</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="activity_user.html">กิจกรรม</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="document_user.html">เอกสาร</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">เสนอจัดโครงการ</a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a class="dropdown-item" href="sentdocument_user.html">เสนอเอกสารจัดโครงการ</a>
+                   <a class="dropdown-item" href="checkdocument_user.html">ตรวจสอบสถานะเอกสาร</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="contact_user.html">ติดต่อ</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="about_user.html">เกี่ยวกับ</a>
+               </li>
+              <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="nav-item dropdown">
+                <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-primary"> <i class="fa fa-address-card" aria-hidden="true"></i></button>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="profile_user.html"> <i class="fa fa-user-o" aria-hidden="true"></i> ข้อมูลส่วนตัว</a>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item" id="btnlogout" onclick="logout()"> <i class="fa fa-sign-out" aria-hidden="true"></i> ออกจากระบบ</button>
+                </li>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2 class="mt-4 mb-3">ติดต่อองค์กร</h2>
+      <hr>
+      <div class="row">
+        <div class="col-lg-8 mb-4">
+          <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.8325197221616!2d104.80219941516951!3d15.276926564238824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3116862dc684dec5%3A0xc52db71b8837b645!2sUbon+Ratchathani+City+Hall!5e0!3m2!1sen!2sth!4v1554213191924!5m2!1sen!2sth"></iframe>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <h3>รายละเอียดการติดต่อ</h3>
+            <p>
+              333 หมู่ที่ 9 ถนนราชสีมา-โชคชัย ตำบลหนองบัวศาลา อำเภอเมือง จังหวัดนครราชสีมา 30000
+              <br>
+            </p>
+            <p> <i class="fa fa-phone" aria-hidden="true"></i> 044 327015-7  </p>
+            <p> <i class="fa fa fa-fax" aria-hidden="true"></i> 044 327107-8  </p>
+            <!-- <p> <i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:name@example.com">name@example.com </a> </p> -->
+            <p><i class="fa fa-clock-o" aria-hidden="true"></i> จันทร์ - ศุกร์ : 9.00 น. - 16.30 น. </p>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 mb-4">
+          <h3>ส่งข้อความ</h3>
+          <hr>
+          <form name="sentMessage" id="contactForm" novalidate method="post">
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>ชื่อ-สกุล:</label>
+                <input type="text" class="form-control" id="nameContact" required data-validation-required-message="กรุณากรอกชื่อ-สกุล">
+                <p class="help-block"></p>
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>โทรศัพท์:</label>
+                <input type="tel" class="form-control" id="phoneContact" required data-validation-required-message="กรุณากรอกหมายเลขโทรศัพท์" minlength="9" maxlength="10">
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>อีเมล:</label>
+                <input type="email" class="form-control" id="emailContact" required data-validation-required-message="กรุณากรอกอีเมล์">
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>ข้อความ:</label>
+                <textarea rows="10" cols="100" class="form-control" id="messageContact" required data-validation-required-message="กรุณากรอกข้อความ" maxlength="999" style="resize:none"></textarea>
+              </div>
+            </div>
+            <div id="success"></div>
+            <button type="submit" class="btn btn-primary" id="sendMessageButton" onclick="contactData()">ส่งข้อความ</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-storage.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC_vVDm3w1xp1joWVpz2RBSF7sVi1LlCrE",
+        authDomain: "cydotedocument.firebaseapp.com",
+        databaseURL: "https://cydotedocument.firebaseio.com",
+        projectId: "cydotedocument",
+        storageBucket: "cydotedocument.appspot.com",
+        messagingSenderId: "280161127760"
+      };
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+      var storage = firebase.storage();
+      </script>
+
+      <script src="script/showus.js"></script>
+      <script src="script/contact.js"></script>
+
+  </body>
+
+</html>

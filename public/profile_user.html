@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CYDOT E-Document | ข้อมูลส่วนตัว</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/cydotlogo.png">
+    <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  </head>
+
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index_user.html">CYDOT E-Document</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index_user.html">หน้าหลัก</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="activity_user.html">กิจกรรม</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="document_user.html">เอกสาร</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">เสนอจัดโครงการ</a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a class="dropdown-item" href="sentdocument_user.html">เสนอเอกสารจัดโครงการ</a>
+                   <a class="dropdown-item" href="checkdocument_user.html">ตรวจสอบสถานะเอกสาร</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="contact_user.html">ติดต่อ</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="about_user.html">เกี่ยวกับ</a>
+               </li>
+              <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="nav-item dropdown">
+                  <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-primary"> <i class="fa fa-address-card" aria-hidden="true"></i></i></button>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="profile_user.html"> <i class="fa fa-user-o" aria-hidden="true"></i> ข้อมูลส่วนตัว</a>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item" id="btnlogout" onclick="logout()"> <i class="fa fa-sign-out" aria-hidden="true"></i> ออกจากระบบ</button>
+                </li>
+        </div>
+      </div>
+    </nav>
+
+        <div class="container">
+          <h2 class="my-4">ข้อมูลส่วนตัว <button type="button" name="button" class="btn btn-danger pull-right" data-toggle="modal" data-target="#modalUpdate">แก้ไขข้อมูลส่วนตัว</button> </h2>
+          <hr>
+          <form class="form" name="sentMessage" id="profileData" method="post">
+                <div class="form-group">
+                  <div class="form-group row">
+                      <label class="col-4 col-form-label">ชื่อ </label>
+                      <div class="col-8">
+                      <label id="nameInput" class="form-control"></label>
+                      </div>
+                 </div>
+                 </div>
+                 <div class="form-group">
+                  <div class="form-group row">
+                      <label  class="col-4 col-form-label">นามสกุล</label>
+                      <div class="col-8">
+                      <label id="lastnameInput" class="form-control">
+                      </div>
+                 </div>
+                 </div>
+                <div class="form-group">
+                <div class="form-group row">
+                  <label class="col-4 col-form-label">วันเกิด</label>
+                  <div class="col-8">
+                    <label class="form-control" id="bdInput"></label>
+                  </div>
+                </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-group row">
+                      <label class="col-4 col-form-label">สถานศึกษา</label>
+                      <div class="col-8">
+                      <label id="collageInput" class="form-control"> </label>
+                  </div>
+                </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-group row">
+                      <label class="col-4 col-form-label">ระดับการศึกษา</label>
+                      <div class="col-8">
+                      <label id="degreeInput" class="form-control"></label>
+                  </div>
+                </div>
+                </div>
+                <div class="form-group">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">โทรศัพท์</label>
+                    <div class="col-8">
+                      <label class="form-control" id="telInput"></label>
+                    </div>
+               </div>
+               </div>
+               <div class="form-group">
+               <div class="form-group row">
+                   <label class="col-4 col-form-label">ชื่อผู้ใช้ (อีเมล)</label>
+                   <div class="col-8">
+                     <label class="form-control" id="emailSignup"></label>
+                   </div>
+              </div>
+              </div>
+              <div class="form-group">
+              <div class="form-group row">
+                  <label for="example-tel-input" class="col-4 col-form-label">รหัสผ่าน</label>
+                  <div class="col-8">
+                    <label class="form-control" id="passwordSignup"></label>
+                  </div>
+             </div>
+             </div>
+
+           </form>
+        </div>
+
+        <div id="modalUpdate" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>แก้ไขข้อมูลส่วนตัว </h3>
+                        <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <form class="form" name="sentMessage" id="updateForm" >
+                              <div class="form-group">
+                                <div class="form-group row">
+                                    <label class="col-4 col-form-label">ชื่อ</label>
+                                    <div class="col-8">
+                                    <input id="nameupdate" class="form-control">
+                                    </div>
+                               </div>
+                               </div>
+                               <div class="form-group">
+                                <div class="form-group row">
+                                    <label  class="col-4 col-form-label">นามสกุล</label>
+                                    <div class="col-8">
+                                    <input id="lastnameUpdate" class="form-control" >
+                                    </div>
+                               </div>
+                               </div>
+                              <div class="form-group">
+                              <div class="form-group row">
+                                <label class="col-4 col-form-label">วันเกิด</label>
+                                <div class="col-8">
+                                  <input class="form-control" type="date" id="bdUpdate">
+                                </div>
+                              </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="form-group row">
+                                    <label class="col-4 col-form-label">สถานศึกษา</label>
+                                    <div class="col-8">
+                                    <input id="collageUpdate" class="form-control" type="text" >
+                                </div>
+                              </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="form-group row">
+                                    <label class="col-4 col-form-label">ระดับการศึกษา</label>
+                                    <div class="col-8">
+                                    <input id="degreeUpdate" class="form-control" type="text" >
+                                </div>
+                              </div>
+                              </div>
+                              <div class="form-group">
+                              <div class="form-group row">
+                                  <label class="col-4 col-form-label">โทรศัพท์</label>
+                                  <div class="col-8">
+                                    <input class="form-control" id="telUpdate" minlength="9" maxlength="10">
+                                  </div>
+                             </div>
+                             </div>
+                             <div class="form-group">
+                             <div class="form-group row">
+                                 <label class="col-4 col-form-label">ชื่อผู้ใช้ (อีเมล)</label>
+                                 <div class="col-8">
+                                   <input class="form-control" id="emailUpdate">
+                                 </div>
+                            </div>
+                            </div>
+                            <div class="form-group">
+                            <div class="form-group row">
+                                <label for="example-tel-input" class="col-4 col-form-label">รหัสผ่าน</label>
+                                <div class="col-8">
+                                  <input class="form-control" id="passwordUpdate">
+                                </div>
+                           </div>
+                           </div>
+                         </form>
+
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnSignup" class="btn btn-success" type="submit" onclick="updatedataUser()">อัพเดทข้อมูล</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyC_vVDm3w1xp1joWVpz2RBSF7sVi1LlCrE",
+            authDomain: "cydotedocument.firebaseapp.com",
+            databaseURL: "https://cydotedocument.firebaseio.com",
+            projectId: "cydotedocument",
+            storageBucket: "cydotedocument.appspot.com",
+            messagingSenderId: "280161127760"
+          };
+          firebase.initializeApp(config);
+          const db = firebase.firestore();
+        </script>
+        <script src="script/showdatauser.js"></script>
+        <script src="script/updatedatauser.js"></script>
+
+        </script>
+
+        </body>
+        </html>

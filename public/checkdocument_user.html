@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CYDOT E-Document | ตรวจสอบสถานะเอกสาร</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/cydotlogo.png">
+    <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index_user.html">CYDOT E-Document</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index_user.html">หน้าหลัก</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="activity_user.html">กิจกรรม</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="document_user.html">เอกสาร</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">เสนอจัดโครงการ</a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a class="dropdown-item" href="sentdocument_user.html">เสนอเอกสารจัดโครงการ</a>
+                   <a class="dropdown-item" href="checkdocument_user.html">ตรวจสอบสถานะเอกสาร</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="contact_user.html">ติดต่อ</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="about_user.html">เกี่ยวกับ</a>
+               </li>
+              <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="nav-item dropdown">
+                  <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-primary"> <i class="fa fa-address-card" aria-hidden="true"></i></button>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="profile_user.html"> <i class="fa fa-user-o" aria-hidden="true"></i> ข้อมูลส่วนตัว</a>
+                    <div class="dropdown-divider"></div>
+                  <button class="dropdown-item" id="btnlogout" onclick="logout()"> <i class="fa fa-sign-out" aria-hidden="true"></i> ออกจากระบบ</button>
+                </li>
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2 class="my-4">ตรวจสอบสถานะเอกสาร</h2>
+      <hr>
+      <div class="row">
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <h3><i class="fa fa-table"></i> โครงการ</h3>
+
+                        </div>
+
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table id="eventdata" class="table table-bordered table-hover display">
+                          <thead>
+                            <tr>
+                              <th>ชื่อโครงการ</th>
+                              <th>ตรวจสอบผล</th>
+
+                            </tr>
+                          </thead>
+                        </table>
+                        </div>
+
+                      </div>
+                    </div><!-- end card-->
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <h3><i class="fa fa-eye"></i> แสดงรายละเอียดโครงการ</h3>
+                      </div>
+
+                      <div class="card-body">
+
+                        <div class="table-responsive" >
+                          <div class="form-group">
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label">ชื่อโครงการ</label>
+                                <div class="col-8" >
+                                  <textarea class="form-control" id="nameev"></textarea>
+                                </div>
+                           </div>
+                           </div>
+                           <div class="form-group">
+                             <div class="form-group row">
+                                 <label class="col-4 col-form-label">ใบประหน้า</label>
+                                 <div class="col-8">
+                                   <label class="form-control" id="one"> </label>
+                                 </div>
+                            </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="form-group row">
+                                  <label class="col-4 col-form-label">เอกสารโครงการ</label>
+                                  <div class="col-8" >
+                                    <label class="form-control" id="two"> </label>
+                                  </div>
+                             </div>
+                             </div>
+                             <div class="form-group">
+                               <div class="form-group row">
+                                   <label class="col-4 col-form-label">สรุปการประชุม</label>
+                                   <div class="col-8">
+                                     <label class="form-control" id="three"> </label>
+                                   </div>
+                              </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="form-group row">
+                                    <label class="col-4 col-form-label">สำเนาบัตร</label>
+                                    <div class="col-8">
+                                      <label class="form-control" id="four"> </label>
+                                    </div>
+                               </div>
+                               </div>
+                               <div class="form-group">
+                                 <div class="form-group row">
+                                     <label class="col-4 col-form-label">สำเนาบัญชี</label>
+                                     <div class="col-8">
+                                       <label class="form-control" id="five"> </label>
+                                     </div>
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-4 col-form-label"></label>
+                                  <a id="bcb"></a>
+                                 </div>
+                               </div>
+                      </div>
+                    </div><!-- end card-->
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+
+
+        <div id="modaledit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>ยืนยันการแก้ไขเอกสารโครงการ</h3>
+                        <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <form class="form" name="sentMessage" id="updateForm" method="post" >
+                          <div class="form-group">
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label">ชื่อ</label>
+                                <div class="input-group col-8">
+                                  <textarea id="nameedi" class="form-control"></textarea>
+                                </div>
+                           </div>
+                           </div>
+                           <div class="form-group">
+                             <div class="form-group row">
+                                 <label class="col-4 col-form-label">ใบประหน้า</label>
+                                 <div class="input-group col-8">
+                                   <div class="custom-file">
+                                     <input type="file" class="custom-file-input" value="upload" id="inputGroupFile01" placeholder="เลืกรุณาเลือกไฟล์">
+                                     <label class="custom-file-label" for="inputGroupFile01">กรุณาเลือกไฟล์</label>
+                                   </div>
+                                 </div>
+                            </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="form-group row">
+                                  <label class="col-4 col-form-label">เอกสารโครงการ</label>
+                                  <div class="input-group col-8">
+                                    <div class="custom-file">
+                                      <input type="file" class="custom-file-input" value="upload"  id="inputGroupFile02">
+                                      <label class="custom-file-label" for="inputGroupFile02">กรุณาเลือกไฟล์</label>
+                                    </div>
+                                  </div>
+                             </div>
+                             </div>
+                             <div class="form-group">
+                               <div class="form-group row">
+                                   <label class="col-4 col-form-label">สรุปการประชุม</label>
+                                   <div class="input-group col-8">
+                                     <div class="custom-file">
+                                       <input type="file" class="custom-file-input" value="upload"  id="inputGroupFile03">
+                                       <label class="custom-file-label" for="inputGroupFile03">กรุณาเลือกไฟล์</label>
+                                     </div>
+                                   </div>
+                              </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="form-group row">
+                                    <label class="col-4 col-form-label">สำเนาบัตร</label>
+                                    <div class="input-group col-8">
+                                      <div class="custom-file">
+                                        <input type="file" class="custom-file-input" value="upload" id="imgInp01">
+                                        <label class="custom-file-label" for="imgInp01">กรุณาเลือกไฟล์</label>
+                                      </div>
+                                    </div>
+                               </div>
+                               </div>
+                               <div class="form-group">
+                                 <div class="form-group row">
+                                     <label class="col-4 col-form-label">สำเนาบัญชี</label>
+                                     <div class="input-group col-8">
+                                       <div class="custom-file">
+                                         <input type="file" class="custom-file-input" id="imgInp02" value="upload" >
+                                         <label class="custom-file-label" for="imgInp02">กรุณาเลือกไฟล์</label>
+                                       </div>
+                                     </div>
+                                </div>
+                                </div>
+                         </form>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a id="sbc"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-storage.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC_vVDm3w1xp1joWVpz2RBSF7sVi1LlCrE",
+        authDomain: "cydotedocument.firebaseapp.com",
+        databaseURL: "https://cydotedocument.firebaseio.com",
+        projectId: "cydotedocument",
+        storageBucket: "cydotedocument.appspot.com",
+        messagingSenderId: "280161127760"
+      };
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+      var storage = firebase.storage();
+      </script>
+
+      <script src="script/showus.js"></script>
+      <script src="script/checkdoc.js"></script>
+      <script src="js/blockchain.js"></script>
+      <script>
+        $(".custom-file-input").on("change", function() {
+          var fileName = $(this).val().split("\\").pop();
+          $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+      </script>
+
+    </body>
+    </html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>CYDOT E-Document | เสนอเอกสารจัดโครงการ</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/cydotlogo.png">
+    <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index_user.html">CYDOT E-Document</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index_user.html">หน้าหลัก</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="activity_user.html">กิจกรรม</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="document_user.html">เอกสาร</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">เสนอจัดโครงการ</a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a class="dropdown-item" href="sentdocument_user.html">เสนอเอกสารจัดโครงการ</a>
+                   <a class="dropdown-item" href="checkdocument_user.html">ตรวจสอบสถานะเอกสาร</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="contact_user.html">ติดต่อ</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="about_user.html">เกี่ยวกับ</a>
+               </li>
+              <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="nav-item dropdown">
+                  <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-primary"> <i class="fa fa-address-card" aria-hidden="true"></i></button>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="profile_user.html"> <i class="fa fa-user-o" aria-hidden="true"></i> ข้อมูลส่วนตัว</a>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item" id="btnlogout" onclick="logout()"> <i class="fa fa-sign-out" aria-hidden="true"></i> ออกจากระบบ</button>
+                  </li>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h2 class="my-4">เสนอเอกสารจัดโครงการ</h2>
+      <hr>
+      <form class="form-group" id="blc" method="post" novalidate>
+        <div class="control-group form-group">
+          <div class="control">
+          <label>ชื่อกิจกรรม</label>
+          <input type="text" class="form-control" placeholder="กรุณากรอกชื่อกิจกรรม" id="nameactivity">
+        </div>
+      </div>
+        <div class="control-group form-group">
+          <div class="control">
+          <label>ใบปะหน้า</label>
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" value="upload" id="inputGroupFile01" placeholder="เลืกรุณาเลือกไฟล์">
+              <label class="custom-file-label" for="inputGroupFile01">กรุณาเลือกไฟล์</label>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="control-group form-group">
+          <div class="control">
+          <label>เอกสารโครงการ</label>
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" value="upload"  id="inputGroupFile02">
+              <label class="custom-file-label" for="inputGroupFile02">กรุณาเลือกไฟล์</label>
+            </div>
+        </div>
+      </div>
+      </div>
+          <div class="control-group form-group">
+            <div class="control">
+            <label>สรุปการประชุม</label>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" value="upload"  id="inputGroupFile03">
+                <label class="custom-file-label" for="inputGroupFile03">กรุณาเลือกไฟล์</label>
+              </div>
+          </div>
+        </div>
+        </div>
+        <div class="control-group form-group">
+          <div class="control">
+          <label>สำเนาบัตรประจำตัวประชาชน</label>
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" value="upload" id="imgInp01">
+              <label class="custom-file-label" for="imgInp01">กรุณาเลือกไฟล์</label>
+            </div>
+        </div>
+      </div>
+      </div>
+          <div class="control-group form-group">
+            <div class="control">
+            <label>สำเนาหน้าบัญชีธนาคาร</label>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="imgInp02" value="upload" >
+                <label class="custom-file-label" for="imgInp02">กรุณาเลือกไฟล์</label>
+              </div>
+          </div>
+        </div>
+        </div>
+        <br>
+        <br>
+      </form>
+      <center>
+        <div class="control-group form-group">
+          <div class="control">
+            <button type="submit" value="submit" class="btn btn-success" id="senddocumentButton" onclick="uploadEvent()">ขอจัดโครงการ</button>
+            <button type="reset" value="reset" class="btn btn-danger" onclick="resetdocupload()">คืนค่าข้อมูล</button>
+          </div>
+        </div>
+      </center>
+    </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-storage.js"></script>
+    <script>
+      var config = {
+        apiKey: "AIzaSyC_vVDm3w1xp1joWVpz2RBSF7sVi1LlCrE",
+        authDomain: "cydotedocument.firebaseapp.com",
+        databaseURL: "https://cydotedocument.firebaseio.com",
+        projectId: "cydotedocument",
+        storageBucket: "cydotedocument.appspot.com",
+        messagingSenderId: "280161127760"
+      };
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+      var storage = firebase.storage();
+      </script>
+      <script src="js/blockchain.js"></script>
+      <script src="script/uploadpaper.js"></script>
+      <script src="script/showus.js"></script>
+      <script>
+        $(".custom-file-input").on("change", function() {
+          var fileName = $(this).val().split("\\").pop();
+          $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+      </script>
+    </body>
+    </html>

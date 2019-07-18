@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CYDOT E-Document | เอกสาร</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/cydotlogo.png">
+    <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CYDOT E-Document</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">หน้าหลัก</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="activity.html">กิจกรรม</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="document.html">เอกสาร</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">ติดต่อ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">เกี่ยวกับ</a>
+            </li>
+            <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+              <li class="dropdown order-1">
+                  <button type="button" id="dropdownMenu" data-toggle="dropdown" class="btn btn-primary "> <i class="fa fa-user-circle" aria-hidden="true"></i> เข้าสู่ระบบ <span class="caret"></span></button>
+                  <ul class="dropdown-menu dropdown-menu-right" style="padding: 20px 10px 5px 10px; width:300px;">
+                     <li class="px-3 py-2">
+                         <form class="form" role="form" method="post">
+                              <div class="form-group">
+                                <label for="primary">ชื่อผู้ใช้ (อีเมล) :</label>
+                                  <input id="emailLogin" placeholder="ขื่อผู้ใช้" class="form-control" type="email" >
+                              </div>
+                              <div class="form-group">
+                                  <label for="Secondary">รหัสผ่าน :</label>
+                                  <input id="passwordLogin" placeholder="รหัสผ่าน" class="form-control" type="password">
+                              </div>
+                              <hr>
+                              <div class="form-group">
+                                  <button id="btnLogin" type="button" class="btn btn-success btn-block" onclick="login()">เข้าสู่ระบบ</button>
+                                  <button id="btnsign" type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalSignUp">สมัครสมาชิก</button>
+                              </div>
+                          </form>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <h2 class="my-4">เอกสาร</h2>
+      <hr>
+
+
+            <div class="input-group md-form form-sm form-2 pl-0">
+              <input class="form-control my-0 py-1" type="text" placeholder="ค้นหาขาวสารและกิจกรรม" aria-label="Search" id="myinput">
+              <div class="input-group-append">
+                <span class="input-group-text lighten-3" id="basic-text1"><i class="fa fa-search text-grey" aria-hidden="true"></i></span>
+              </div>
+            </div>
+                  <div class="card-body">
+                    <table class="table" id="datatabel" cellspacing="0" width="100%">
+                      <thead>
+                        <tr>
+                          <th class="th-sm">ชื่อเอกสาร</th>
+                          <th class="th-sm">วันที่อัพเดท</th>
+                          <th class="th-sm">ดาวน์โหลด</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
+    <div id="modalSignUp" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" method="post">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>สมัครสมาชิก</h3>
+                    <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <form class="form" name="sentsingup" id="signupForm" method="post" novalidate>
+                          <div class="form-group">
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label">ชื่อ</label>
+                                <div class="col-8">
+                                <input id="nameInput" placeholder="ชื่อ" class="form-control" type="text" required >
+                                </div>
+                           </div>
+                           </div>
+                           <div class="form-group">
+                            <div class="form-group row">
+                                <label  class="col-4 col-form-label">นามสกุล</label>
+                                <div class="col-8">
+                                <input id="lastnameInput" placeholder="นามสกุล" class="form-control" type="text" >
+                                </div>
+                           </div>
+                           </div>
+                          <div class="form-group">
+                          <div class="form-group row">
+                            <label class="col-4 col-form-label">วันเกิด</label>
+                            <div class="col-8">
+                              <input class="form-control" type="date" id="bdInput">
+                            </div>
+                          </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label">สถานศึกษา</label>
+                                <div class="col-8">
+                                <input id="collageInput" placeholder="สถานศึกษา" class="form-control" type="text" >
+                            </div>
+                          </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label">ระดับการศึกษา</label>
+                                <div class="col-8">
+                                <input id="degreeInput" placeholder="ระดับการศึกษา" class="form-control" type="text" >
+                            </div>
+                          </div>
+                          </div>
+                          <div class="form-group">
+                          <div class="form-group row">
+                              <label class="col-4 col-form-label">โทรศัพท์</label>
+                              <div class="col-8">
+                                <input class="form-control" type="number" placeholder="โทรศัพท์" id="telInput" minlength="9" maxlength="10">
+                              </div>
+                         </div>
+                         </div>
+                         <div class="form-group">
+                         <div class="form-group row">
+                             <label class="col-4 col-form-label">ชื่อผู้ใช้ (อีเมล)</label>
+                             <div class="col-8">
+                               <input class="form-control" type="email" placeholder="ชื่อผู้ใช้" id="emailSignup">
+                             </div>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <div class="form-group row">
+                            <label for="example-tel-input" class="col-4 col-form-label">รหัสผ่าน</label>
+                            <div class="col-8">
+                              <input class="form-control" type="password" placeholder="รหัสผ่าน" id="passwordSignup">
+                            </div>
+                       </div>
+                       </div>
+                  </form>
+
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnSignup" class="btn btn-primary" type="submit" onclick="signUp()">สมัครสมาชิก</button>
+                </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-storage.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC_vVDm3w1xp1joWVpz2RBSF7sVi1LlCrE",
+        authDomain: "cydotedocument.firebaseapp.com",
+        databaseURL: "https://cydotedocument.firebaseio.com",
+        projectId: "cydotedocument",
+        storageBucket: "cydotedocument.appspot.com",
+        messagingSenderId: "280161127760"
+      };
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+      var storage = firebase.storage();
+    </script>
+    <script src="script/signin.js"></script>
+    <script src="script/auth.js"></script>
+    <script src="script/loaddoc.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("#myinput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#datatabel tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
+    </script>
+
+
+</body>
+</html>

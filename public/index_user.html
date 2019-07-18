@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CYDOT E-Document</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/cydotlogo.png">
+    <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index_user.html">CYDOT E-Document</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index_user.html">หน้าหลัก</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="activity_user.html">กิจกรรม</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="document_user.html">เอกสาร</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">เสนอจัดโครงการ</a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <a class="dropdown-item" href="sentdocument_user.html">เสนอเอกสารจัดโครงการ</a>
+                   <a class="dropdown-item" href="checkdocument_user.html">ตรวจสอบสถานะเอกสาร</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="contact_user.html">ติดต่อ</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="about_user.html">เกี่ยวกับ</a>
+               </li>
+
+              <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="nav-item dropdown">
+                  <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-primary"> <i class="fa fa-address-card" aria-hidden="true"></i></button>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="profile_user.html"> <i class="fa fa-user-o" aria-hidden="true"></i> ข้อมูลส่วนตัว</a>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item" id="btnlogout" onclick="logout()"> <i class="fa fa-sign-out" aria-hidden="true"></i> ออกจากระบบ</button>
+                </li>
+        </div>
+      </div>
+    </nav>
+
+    <header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active" style="background-image: url('img/banner1.png')">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item" style="background-image: url('img/banner2.png')">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item" style="background-image: url('img/tbn3.png')">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <h1 class="my-4">หน่วยงาน/ระบบที่เกี่ยวข้อง</h1>
+      <div class="row">
+          <div class='col-md-4 mb-4'>
+                <div class='card h-100'>
+                    <img class='card-img-top'><img src='img/pps.jpg' style='width:100%; height:auto;'>
+                    <div class='card-body'>
+                          <h4 class='card-title'>สำนักงานคณะกรรมการป้องกัน<br>และปราบปรามยาเสพติด</h4>
+                    </div>
+                    <div class='card-footer text-right'>
+                          <a href="https://www.oncb.go.th/Pages/main.aspx" class="btn btn-outline-success btn-sm">เว็บไซต์หน่วยงาน</a>
+                          <a href="https://www.facebook.com/ONCB.TH/" class="btn btn-outline-success btn-sm">แฟนเพจหน่วยงาน</a>
+                   </div>
+                </div>
+          </div>
+          <div class='col-md-4 mb-4'>
+                <div class='card h-100'>
+                    <img class='card-img-top'><img src='img/cy.jpg' style='width:100%; height:auto;'>
+                    <div class='card-body'>
+                          <h4 class='card-title'>ศูนย์อำนวยการประสานงานป้องกัน<br>และแก้ไขปัญหายาเสพติดภาคเยาวชน</h4>
+                    </div>
+                    <div class='card-footer text-right'>
+                          <a href="https://cydot.oncb.go.th/index.php" class="btn btn-outline-success btn-sm">เว็บไซต์หน่วยงาน</a>
+                          <a href="https://www.facebook.com/CYDOT-Thailand-2068341893410428/" class="btn btn-outline-success btn-sm">แฟนเพจหน่วยงาน</a>
+                   </div>
+                </div>
+          </div>
+          <div class='col-md-4 mb-4'>
+                <div class='card h-100'>
+                    <img class='card-img-top'><img src='img/db.jpg' style='width:100%; height:auto;'>
+                    <div class='card-body'>
+                          <h4 class='card-title'> ฐานข้อมูลสมาชิก ศอ.ปส.ย. <br>(Cydot member manual)</h4>
+                    </div>
+                    <div class='card-footer text-right'>
+                          <a href="http://nispa.nccd.go.th/cydot_member/login.php" class="btn btn-outline-success btn-sm">เว็บไซต์ฐานข้อมูล</a>
+                          <a href="https://firebasestorage.googleapis.com/v0/b/cydotedocument.appspot.com/o/paperdownload%2Fcydotmember.pdf?alt=media&token=c5584f19-75da-42e3-a93c-3f93a02abc38" target='_blank' class="btn btn-outline-success btn-sm">คู่มือการใช้งาน</a>
+                   </div>
+                </div>
+          </div>
+        </div>
+        <br>
+
+        <h1 class="my-4">โครงสร้างการดำเนินงาน</h1>
+        <div class="row">
+          <div class="col-lg-6">
+            <img class="img-fluid rounded mb-4" src="img/cydot_structure.jpg" >
+          </div>
+          <div class="col-lg-6">
+              <h2>ศอ.ปส.ย.ระดับชาติ</h2>
+              <p>หน้าที่</p>
+              <p>1. เป็นศูนย์กลางการขับเคลื่อนงานป้องกันและแก้ไขปัญหายาเสพติดของเยาวชน ทุกระดับในการปฏิบัติงาน ศอ.ปส.ย. ให้สอดคล้องกับนโยบายของสำนักงาน
+              <br>2. พัฒนาศักยภาพของสมาชิก ศอ.ปส.ย.ทุกระดับ
+              <br>3. ประสานงาน ติดตาม รวบรวม ผลการดำเนินงานของ ศอ.ปส.ย.ทุกภาค
+              <br>4. รวบรวมและสะท้อนปัญหาของเยาวชนโดยเฉพาะด้านปัญหายาเสพติด รวมทั้งให้ข้อเสนอแนะแก่ ทุกภาคส่วนที่เกี่ยวข้อง เพื่อประโยชน์ในการกำหนดนโยบายและแนวทางการดำเนินงาน ป้องกันและแก้ไขปัญหายาเสพติด
+              <br>5. รวบรวมฐานข้อมูล และทำเนียบเครือข่ายเยาวชน ศอ.ปส.ย.ทุกภาคทั่ว ประเทศ
+              <br>6. ประชาสัมพันธ์ เผยแพร่ผลการดำเนินงานของ ศอ.ปส.ย.ผ่านสื่อ และเวทีต่าง ๆ
+              <br>7. ค้นคว้า รวบรวมและ สนับสนุนองค์ความรู้หรือนวัตกรรมที่เกี่ยวข้องกับการป้องกันและแก้ไขปัญหายาเสพติดในกลุ่มเยาวชนแก่สมาชิก ศอ.ปส.ย.
+              <br>8. ปฏิบัติหน้าที่อื่นๆตามที่สำนักงานมอบหมาย</p>
+              </div>
+          </div>
+
+        <div class="row">
+              <div class="col-lg-6">
+                <h2>ศอ.ปส.ย.ระดับภาค</h2>
+                <p>หน้าที่</p>
+                <p>1. เป็นศูนย์กลางการขับเคลื่อนงานป้องกันและแก้ไขปัญหายาเสพติดของเยาวชนใน ระดับภาค ให้สอดคล้องกับนโยบายของสำนักงานและบริบทของพื้นที่
+                <br>2. พัฒนาศักยภาพของสมาชิก ศอ.ปส.ย.ภาค
+                <br>3. ประสานงาน ติดตาม รวบรวม ผลการดำเนินงานของศอ.ปส.ย.จังหวัด
+                <br>4. รวบรวมและสะท้อนปัญหาของเยาวชนโดยเฉพาะด้านปัญหายาเสพติด
+                <br>5. รวบรวมฐานข้อมูล และทำเนียบเครือข่ายเยาวชน ศอ.ปส.ย.ภาค
+                <br>6. ประชาสัมพันธ์ เผยแพร่ผลการดำเนินงานของ ศอ.ปส.ย.ผ่านสื่อ และเวทีต่างๆ
+                <br>7. ค้นคว้า รวบรวมและ สนับสนุนองค์ความรู้หรือนวัตกรรมที่เกี่ยวข้องกับการป้องกันและแก้ไขปัญหายาเสพติดในกลุ่มเยาวชนแก่สมาชิก ศอ.ปส.ย.
+                <br>8. ปฏิบัติหน้าที่อื่น ๆ ตามที่สำนักงานภาคมอบหมาย</p>
+              </div>
+
+              <div class="col-lg-6">
+                <h2>ศอ.ปส.ย.ระดับจังหวัด</h2>
+                <p>หน้าที่</p>
+                <p>1. เป็นศูนย์กลางการขับเคลื่อนงานป้องกันและแก้ไขปัญหายาเสพติดของเยาวชนในระดับ จังหวัด ให้สอดคล้องกับนโยบายของสำนักงานและบริบทของพื้นที่
+                <br>2. พัฒนาศักยภาพของสมาชิก ศอ.ปส.ย.จังหวัด
+                <br>3. ประสานงาน ติดตาม รวบรวม ผลการดำเนินงานของ เครือข่าย ศอ.ปส.ย.จังหวัด
+                <br>4. รวบรวมและสะท้อนปัญหาของเยาวชนโดยเฉพาะด้านปัญหายาเสพติด
+                <br>5. รวบรวมฐานข้อมูล และทำเนียบเครือข่ายเยาวชน ศอ.ปส.ย.จังหวัด
+                <br>6. ประชาสัมพันธ์ เผยแพร่ผลการดำเนินงานของ ศอ.ปส.ย.ผ่านสื่อ และเวทีต่าง ๆ
+                <br>7. ค้นคว้า รวบรวมและ สนับสนุนองค์ความรู้หรือนวัตกรรมที่เกี่ยวข้องข้องกับการป้องกันและแก้ไขปัญหายาเสพติดในกลุ่มเยาวชนแก่สมาชิก ศอ.ปส.ย.
+                <br>8. ปฏิบัติหน้าที่อื่นๆ ตามที่สำนักงานภาคมอบหมาย</p>
+             </div>
+          </div>
+    <!-- /.container -->
+  </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-storage.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC_vVDm3w1xp1joWVpz2RBSF7sVi1LlCrE",
+        authDomain: "cydotedocument.firebaseapp.com",
+        databaseURL: "https://cydotedocument.firebaseio.com",
+        projectId: "cydotedocument",
+        storageBucket: "cydotedocument.appspot.com",
+        messagingSenderId: "280161127760"
+      };
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+      var storage = firebase.storage();
+      </script>
+      <script src="script/showus.js"></script>
+  </body>
+
+</html>

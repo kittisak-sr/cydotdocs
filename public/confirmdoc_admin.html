@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CYDOT E-Document | โครงการที่ได้รับการอนุมัติ</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/cydotlogo.png">
+    <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  </head>
+
+      <body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="index_admin.html">CYDOT E-Document</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="nav-item dropdown">
+                <button type="button" id="dropdownMenuadmin" data-toggle="dropdown" class="btn btn-primary"> <i class="fa fa-address-card" aria-hidden="true"></i></button>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="info_admin.html"> <i class="fa fa-user-o" aria-hidden="true"></i> ข้อมูลส่วนตัว</a>
+                    <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" id="btnlogout" onclick="logout()"> <i class="fa fa-sign-out" aria-hidden="true"></i> ออกจากระบบ</button>
+                </li>
+                </div>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container">
+          <br>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index_admin.html" style="font-size:24px;">Admin Dashboard <a href="confirmdoc_admin.html" style="font-size:18px;"> / โครงการที่ได้รับอนุมัติ</a></a>
+          </ol>
+          <div class="row">
+            <div class="col-lg-3 mb-4">
+              <div class="list-group">
+                <a href="index_admin.html" class="list-group-item"><i class="fa fa-home" aria-hidden="true"></i> หน้าหลัก</a>
+                <a href="news_admin.html" class="list-group-item"><i class="fa fa-newspaper-o" aria-hidden="true"></i> ประชาสัมพันธ์กิจกรรม</a>
+                <a href="upload_admin.html" class="list-group-item"><i class="fa fa-upload" aria-hidden="true"></i> อัพโหลดเอกสาร/แบบฟอร์ม</a>
+                <a href="contact_admin.html" class="list-group-item"><i class="fa fa-comment" aria-hidden="true"></i> ข้อความ</a>
+                <a href="checkdoc_admin.html" class="list-group-item"><i class="fa fa-file-archive-o" aria-hidden="true"></i> คำร้องขอจัดโครงการ</a>
+                <a href="confirmdoc_admin.html" class="list-group-item"><i class="fa fa-check-square-o" aria-hidden="true"></i> โครงการที่ได้รับการอนุมัติ</a>
+                <a href="info_admin.html" class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i> ข้อมูลส่วนตัว</a>
+                <a href="addmember_admin.html" class="list-group-item"><i class="fa fa-user-plus" aria-hidden="true"></i> เพิ่มสมาชิก</a>
+                <a href="confirmuser.html" class="list-group-item"><i class="fa fa-user-plus" aria-hidden="true"></i> ยืนยันการสมัครสมาชิก</a>
+                <a href="addadmin_admin.html" class="list-group-item"><i class="fa fa-user-plus" aria-hidden="true"></i> เพิ่มผู้ดูแลระบบ</a>
+              </div>
+            </div>
+
+            <div class="col-lg-9 mb-4">
+              <h2>โครงการที่ได้รับการอนุมัติ</h2>
+              <hr>
+              <div class="row">
+              						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+              							<div class="card mb-3">
+              								<div class="card-header">
+              									<h3><i class="fa fa-table"></i> โครงการ</h3>
+              									</div>
+              								<div class="card-body">
+              									<div class="table-responsive">
+              									<table id="eventdata" class="table table-bordered table-hover display">
+              										<thead>
+              											<tr>
+              												<th>ชื่อโครงการ</th>
+              												<th>ตรวจสอบ</th>
+              											</tr>
+              										</thead>
+              									</table>
+              									</div>
+              								</div>
+              							</div><!-- end card-->
+              						</div>
+              						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+              							<div class="card mb-3">
+              								<div class="card-header">
+              									<h3><i class="fa fa-eye"></i> แสดงรายละเอียดโครงการ</h3>
+              								</div>
+              								<div class="card-body" id="showdetail">
+              									<div class="table-responsive" >
+                                  <div class="form-group">
+                                    <div class="form-group row">
+                                        <label class="col-4 col-form-label">ชื่อโครงการ</label>
+                                        <div class="col-8" id="nameev">
+                                        </div>
+                                   </div>
+                                   </div>
+                                   <div class="form-group">
+                                     <div class="form-group row">
+                                         <label class="col-4 col-form-label">ใบประหน้า</label>
+                                         <div class="col-8" id="one">
+                                         </div>
+                                    </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="form-group row">
+                                          <label class="col-4 col-form-label">เอกสารโครงการ</label>
+                                          <div class="col-8" id="two">
+                                          </div>
+                                     </div>
+                                     </div>
+                                     <div class="form-group">
+                                       <div class="form-group row">
+                                           <label class="col-4 col-form-label">สรุปการประชุม</label>
+                                           <div class="col-8" id="three">
+                                           </div>
+                                      </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-group row">
+                                            <label class="col-4 col-form-label">สำเนาบัตร</label>
+                                            <div class="col-8" id="four">
+                                            </div>
+                                       </div>
+                                       </div>
+                                       <div class="form-group">
+                                         <div class="form-group row">
+                                             <label class="col-4 col-form-label">สำเนาบัญชี</label>
+                                             <div class="col-8" id="five">
+                                             </div>
+                                        </div>
+                                        </div>
+              									</div>
+                              </div>
+              							</div><!-- end card-->
+              						</div>
+              				</div>
+            </div>
+      </div>
+    </div>
+
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyC_vVDm3w1xp1joWVpz2RBSF7sVi1LlCrE",
+            authDomain: "cydotedocument.firebaseapp.com",
+            databaseURL: "https://cydotedocument.firebaseio.com",
+            projectId: "cydotedocument",
+            storageBucket: "cydotedocument.appspot.com",
+            messagingSenderId: "280161127760"
+          };
+          firebase.initializeApp(config);
+          const db = firebase.firestore();
+        </script>
+        <script src="script/showauthadmin.js"></script>
+        <script src="script/confirm_doc.js"></script>
+      </body>
+
+    </html>
